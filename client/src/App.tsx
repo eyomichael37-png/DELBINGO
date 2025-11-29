@@ -407,7 +407,7 @@ export default function App() {
   const playCallSound = async (n: number) => {
     const letter = numberToLetter(n)
     // Always fetch audio from the server to avoid client-origin path issues
-    const base = `${process.env.NODE_ENV === 'production' ? window.location.origin : 'http://localhost:3001'}/audio/${audioPack}`
+    const base = `${import.meta.env.PROD ? window.location.origin : 'http://localhost:3001'}/audio/${audioPack}`
     const candidates = [
       `${base}/${letter}-${n}.mp3`,
       `${base}/${letter}_${n}.mp3`,
