@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: bingo-server
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    plan: free  # or starter for $7/month with better WebSocket support
+
+
